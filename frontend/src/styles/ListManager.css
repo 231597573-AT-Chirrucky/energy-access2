@@ -1,0 +1,147 @@
+/* Ensure the background covers the entire screen */
+.topic-content {
+  padding: 20px;
+  background-color: rgba(230, 230, 230, 0.9); /* Light gray/white background with 90% opacity */
+  height: calc(100vh - 40px);
+  width: calc(100vw - 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Back Button Styles */
+.back-button {
+  background-color: #4a148c; /* Purple background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  position: absolute; /* Position it at the top left */
+  top: 20px;
+  left: 20px;
+}
+
+.back-button:hover {
+  background-color: #6a1b9a; /* Lighter purple when hovered */
+}
+
+/* Add New Item Form Styles */
+.add-item {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-item input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+.add-item button {
+  padding: 10px 20px;
+  background-color: #4a148c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-item button:hover {
+  background-color: #6a1b9a;
+}
+
+/* Container for all topic cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Individual card styles */
+.custom-topic-card {
+  background: linear-gradient(135deg, #4b0082, #000000); /* Purple and black gradient */
+  color: #ffffff; /* White text for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  width: 300px;
+  text-align: center;
+  position: relative;
+  opacity: 0; /* Initially invisible */
+  top: -50px; /* Starts above the view */
+  animation: slideDown 1s forwards; /* Slide down animation */
+  transition: transform 0.3s ease, opacity 0.5s ease, top 0.5s ease;
+}
+
+/* Delayed animations for each card */
+.custom-topic-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.custom-topic-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.custom-topic-card:nth-child(4) {
+  animation-delay: 0.6s;
+}
+.custom-topic-card:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+/* Animation keyframes */
+@keyframes slideDown {
+  to {
+    opacity: 1; /* Becomes visible */
+    top: 0; /* Moves to the original position */
+  }
+}
+
+/* Card title styling */
+.custom-topic-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #ffffff; /* Bright white title */
+}
+
+/* Card description styling */
+.custom-topic-card p {
+  font-size: 1rem;
+  color: #e6e6e6; /* Slightly lighter white for description */
+}
+
+/* Extended content inside the card */
+.custom-topic-card .extended-content {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #c4bfff; /* Light purple for emphasis */
+}
+
+/* Card buttons (Edit & Delete) styles */
+.custom-topic-card button {
+  margin-top: 10px; /* Adds space between content and buttons */
+  margin-right: 10px; /* Adds space between buttons */
+}
+
+.custom-topic-card button:last-child {
+  margin-right: 0; /* No extra space after the last button */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-topic-card {
+    width: 90%; /* Full width on smaller screens */
+  }
+  .card-container {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+}

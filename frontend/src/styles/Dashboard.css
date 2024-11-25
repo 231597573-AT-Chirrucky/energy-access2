@@ -1,0 +1,151 @@
+/* Header */
+.dashboard-header {
+  width: 100%;
+  background: #4b0082; /* Dark purple */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  color: white;
+}
+
+.dashboard-header .logo h2 {
+  margin: 0;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.dashboard-header nav {
+  display: flex;
+  gap: 15px;
+}
+
+.dashboard-header nav button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dashboard-header nav button:hover {
+  color: #d4af37; /* Gold */
+}
+
+/* Page Background */
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: rgb(255, 255, 255);
+  overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+/* Welcome Text Animation */
+.welcome-text {
+  font-size: 2rem;
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: transform 1s ease, opacity 1s ease;
+  margin-top: 100px; /* Spacing below the header */
+}
+
+.welcome-text.slide-down {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mission Text */
+.mission-text {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  text-align: center;
+  color: #555;
+}
+
+/* Dashboard Topics */
+.dashboard-topics {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, black, purple);
+  border-radius: 50%;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+/* Center Button */
+.center-button {
+  position: absolute;
+  bottom: 20px;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.center-button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100vh - 50%); /* Subtract header height for perfect centering */
+  background: transparent; /* Optional: Match the background to your design */
+}
+
+/* Topic Circles */
+.topic-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  cursor: pointer;
+  color: white;
+  text-align: center;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.topic-circle:hover {
+  transform: scale(1.2);
+  color: #d4af37; /* Gold */
+}
+
+.topic-icon {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.logout-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.logout-button:hover {
+  background-color: #d32f2f;
+}
